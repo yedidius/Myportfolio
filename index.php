@@ -1,25 +1,25 @@
 <?php
-// Database connection using PDO
+
 $host = "localhost";
 $username = "root";
 $password = "";
 $database = "portfolio";
 
 try {
-    // Create a PDO instance
+    
     $conn = new PDO("mysql:host=$host;dbname=$database", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Enable exceptions for errors
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 
-    // Fetch about section data
+    
     $about = [];
-    $sql = "SELECT * FROM about LIMIT 1"; // Fetch the first row
+    $sql = "SELECT * FROM about LIMIT 1"; 
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $about = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Fetch projects data
+   
     $projects = [];
-    $sql = "SELECT * FROM projects"; // Fetch all projects
+    $sql = "SELECT * FROM projects"; 
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -27,7 +27,7 @@ try {
     die("Connection failed: " . $e->getMessage());
 }
 
-// Close the connection
+
 $conn = null;
 ?>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ $conn = null;
     <header class="header">
         <a href="#" class="logo"><span>Yedidiya</span></a>
         <nav class="navbar">
-            <!-- <a herf="#" class="active">Portfolio</a> -->
+           
             <a href="#home">Home</a>
             <a href="#projects">Project</a>
             <a href="#about">About</a>
@@ -55,10 +55,17 @@ $conn = null;
         <div class="home-content">
         <h3>Hello</h3>
 
-        <h1>I am <span>Yedidiya<br></span>a Website Developer</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Saepe optio id beatae iste hic, fugiat in quo nam rem, 
-            ab qui eveniet culpa suscipit accusantium vel amet consequuntur a non!</p>
+        <h1>I am <span>Yedidiya<br></span>a Website Developer & Designer</h1>
+        <p>
+            Hi, I'm Yedidiya, a passionate web developer with a love for creating clean, functional, and visually appealing websites. 
+             I specialize in front-end and back-end development, ensuring that every project 
+            I work on is not only beautiful but also highly functional and user-friendly.
+        </p>
+    
+        <p>
+            Let's work together to bring your ideas to life! Feel free to <a href="#contact" class="btn">contact me</a> if you'd like to collaborate 
+            or just say hello.
+        </p>
         </div>
         <div class="img">
             <img src="img.jpg" alt="">

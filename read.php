@@ -1,8 +1,8 @@
 <?php
 require_once 'db_connection.php';
 
-$table = $_GET['table']; // Table name (e.g., about, projects, contacts)
-$id = $_GET['id'] ?? null; // Optional: Fetch a specific record by ID
+$table = $_GET['table']; 
+$id = $_GET['id'] ?? null; 
 
 if ($id) {
     $sql = "SELECT * FROM $table WHERE id = :id";

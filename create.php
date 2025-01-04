@@ -2,8 +2,8 @@
 require_once 'db_connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $table = $_POST['table']; // Table name (e.g., about, projects, contacts)
-    $data = $_POST['data']; // Data to insert (associative array)
+    $table = $_POST['table']; 
+    $data = $_POST['data']; 
 
     $columns = implode(", ", array_keys($data));
     $values = ":" . implode(", :", array_keys($data));

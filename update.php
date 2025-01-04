@@ -2,9 +2,9 @@
 require_once 'db_connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $table = $_POST['table']; // Table name (e.g., about, projects, contacts)
-    $id = $_POST['id']; // ID of the record to update
-    $data = $_POST['data']; // Data to update (associative array)
+    $table = $_POST['table']; 
+    $id = $_POST['id']; 
+    $data = $_POST['data']; 
 
     $updates = [];
     foreach ($data as $key => $value) {
